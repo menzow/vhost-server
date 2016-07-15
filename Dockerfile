@@ -16,8 +16,8 @@ RUN mkdir /vhosts
 #Auto load vhosts from the /vhosts directory
 RUN echo "include /vhosts/*.conf;" > /etc/nginx/conf.d/load-vhosts.conf
 
-COPY docker_entrypoint.sh /docker_entrypoint.sh
+COPY docker-entrypoint.sh /docker-entrypoint.sh
 
 RUN chmod +x /docker_entrypoint.sh
 
-ENTRYPOINT ["/bin/bash", "/docker_entrypoint.sh"]
+ENTRYPOINT ["/bin/bash", "/docker-entrypoint.sh"]
