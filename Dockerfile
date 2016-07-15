@@ -7,9 +7,6 @@ RUN apt-get -y install inotify-tools
 
 RUN apt-get clean
 
-#Force NGINX to run in the foreground
-#RUN echo "daemon off;\n$(cat /etc/nginx/nginx.conf)" > /etc/nginx/nginx.conf
-
 #Create a vhosts directory, incase no volume is mounted we still want the container is ran
 RUN mkdir /vhosts
 
