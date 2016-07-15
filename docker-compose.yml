@@ -8,4 +8,4 @@ services:
       - "80:80"
       - "443:443"
     volumes_from:
-      - container:vhost_storage:0.1
+      - container:vhost_storage

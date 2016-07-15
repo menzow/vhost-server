@@ -15,6 +15,6 @@ RUN echo "include /vhosts/*.conf;" > /etc/nginx/conf.d/load-vhosts.conf
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 
-RUN chmod +x /docker_entrypoint.sh
+RUN chmod +x /docker-entrypoint.sh
 
 ENTRYPOINT ["/bin/bash", "/docker-entrypoint.sh"]
