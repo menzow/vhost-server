@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  vhost_server:
+    build: .
+    network_mode: "bridge"
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes_from:
+      - container:vhost_storage:0.1
