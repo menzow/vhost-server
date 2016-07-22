@@ -31,6 +31,8 @@ cd vhost-server
 #### Step 2
 Like mentioned in the introduction there is a image that will be used to create a storage container. This storage container is nothing more than a busybox image that creates a volume called `vhosts`. After the container is started, it is immediately stopped again. It is not required for the container to be running for the storage to work.
 
+You can use the `create-storage.sh` shell script to intialize the container with the correct image version and container name.
+
 ```sh
 #Initialize vhost-storage
 ./create-storage.sh
@@ -38,7 +40,7 @@ Like mentioned in the introduction there is a image that will be used to create 
 
 #### Step 3
 
-Now that the storage container is created, the server can be started. Running `docker-compose up` we will start the `vhost-server` and expose port 80 and 443. Within the container a nginx server will be started and a directory watcher is created. This directory watcher will constantly poll for changes to any configurations found in the vhost_storage volume. If changes occur, the nginx server is reloaded to apply the new config.
+Now that the storage container is created, the server can be started. Running `docker-compose up` you can start the `vhost-server` and expose port 80 and 443. Within the container a nginx server will be started and a directory watcher is created. This directory watcher will constantly poll for changes to any configurations found in the vhost_storage volume. If changes occur, the nginx server is reloaded to apply the new config.
 
 ```sh
 #Run the server
